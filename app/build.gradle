@@ -36,7 +36,6 @@ private static void libraries(config){
     def retrofit_version = '2.2.0'
     config.implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     config.implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
 }
 
 private static void supportLibs(config){
