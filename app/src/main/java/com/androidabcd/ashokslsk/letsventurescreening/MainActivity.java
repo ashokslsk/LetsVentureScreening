@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<StartUpResponse> call, Response<StartUpResponse> response) {
                 StartUpResponse jsonResponse = response.body();
-                Toast.makeText(MainActivity.this, jsonResponse.getTotalCount()+"", Toast.LENGTH_SHORT).show();
-                mAdapter = new RecyclerviewAdapter((ArrayList<Startup>) jsonResponse.getStartups());
+                mArrayList = new ArrayList<>(jsonResponse.getStartups());
+                mAdapter = new RecyclerviewAdapter(mArrayList);
                 mRecyclerView.setAdapter(mAdapter);
             }
 

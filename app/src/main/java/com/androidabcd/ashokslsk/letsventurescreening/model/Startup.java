@@ -1,9 +1,9 @@
 
 package com.androidabcd.ashokslsk.letsventurescreening.model;
 
-import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 @Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
