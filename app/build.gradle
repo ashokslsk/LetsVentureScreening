@@ -26,6 +26,9 @@ dependencies { config ->
     libraries(config)
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+
 }
 
 
