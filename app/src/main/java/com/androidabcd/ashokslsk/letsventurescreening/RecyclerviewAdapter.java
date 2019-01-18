@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidabcd.ashokslsk.letsventurescreening.model.Startup;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -31,7 +33,8 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     public void onBindViewHolder(RecyclerviewAdapter.ViewHolder viewHolder, int i) {
         viewHolder.tv_name.setText(mFilteredList.get(i).getName());
         viewHolder.tv_summary.setText(mFilteredList.get(i).getName());
-        viewHolder.tv_api_level.setText(mFilteredList.get(i).getMarket());
+        viewHolder.tv_product_summary.setText(mFilteredList.get(i).getMarket());
+        Picasso.get().load(mFilteredList.get(i).getLogo().getUrl().toString()).into(viewHolder.mStartupLogo);
     }
 
     @Override
@@ -70,12 +73,14 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView tv_name, tv_summary, tv_api_level;
+        private TextView tv_name, tv_summary, tv_product_summary;
+        private ImageView mStartupLogo;
         public ViewHolder(View view) {
             super(view);
             tv_name = (TextView) view.findViewById(R.id.startupName);
             tv_summary = (TextView) view.findViewById(R.id.product_summary);
-            tv_api_level = (TextView) view.findViewById(R.id.location);
+            tv_product_summary = (TextView) view.findViewById(R.id.location);
+            mStartupLogo = view.findViewById(R.id.startUpImage);
         }
     }
 }
